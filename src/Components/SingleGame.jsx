@@ -254,7 +254,7 @@ const SingleGame = () => {
     });
   }
   function handleTicket() {
-    if (game.tickets_sold>=game.capacity) {
+    if (game.tickets_sold >= game.capacity) {
       Swal.fire({
         icon: 'error',
         title: 'No tickets available',
@@ -269,7 +269,9 @@ const SingleGame = () => {
       },
       body: JSON.stringify({ tickets_sold: game.tickets_sold + 1 }),
     })
-      .then((res) => res.json())
+      .then((res) => {
+         res.json();
+      })
       .then((data) => {
         setGame((prevGame) => ({
           ...prevGame,
@@ -281,9 +283,17 @@ const SingleGame = () => {
           text: `You have successfully purchased a ticket for ${game.title}`,
         });
       })
-      .catch((err) => console.error("Error purchasing ticket:", err));
-  };
-  /*  */
+      .catch((err) => {
+        console.error("Error purchasing ticket:", err);
+        Swal.fire({
+          icon: 'error',
+          title: 'Purchase Failed',
+          text: `There was an error purchasing the ticket: ${err.message}`,
+        });
+      });
+  }
+  
+  
   return (
     <div>
       <div key={game.id}>
