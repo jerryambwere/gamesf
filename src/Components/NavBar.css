@@ -1,0 +1,52 @@
+#Nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem; /* Space between menu items */
+  }
+  
+  /* List Item Styling */
+  #Nav li {
+    margin: 0;
+  }
+  
+  /* Link Styling */
+  #Nav a {
+    text-decoration: none;
+    color: #ffffff; /* White text color */
+    font-weight: 500; /* Slightly lighter font weight */
+    transition: color 0.3s, transform 0.3s; /* Smooth transitions */
+    font-size: x-large;
+
+  }
+  
+  #Nav a:hover {
+    color: #e50914; /* Netflix red color on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  h1{
+    font-size: 400%;
+    text-align: center;
+  }
+.nav {
+  list-style-type: none;
+  margin: 0 10px;
+}
+
+.nav a {
+  display: inline-block;
+  text-decoration: none;
+  color: #ddd;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #444;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav a:hover, .nav a:active {
+  background-color: #555;
+  color: #fff;
+}
+
+  

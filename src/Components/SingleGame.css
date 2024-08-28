@@ -1,0 +1,341 @@
+/* From Uiverse.io by Nawsome */
+.pl {
+  display: block;
+  width: 15em; /* Increased size */
+  height: 15em; /* Increased size */
+  margin: 0 auto; /* Center horizontally */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.pl__arrows,
+.pl__ring-rotate,
+.pl__ring-stroke,
+.pl__tick {
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.pl__arrows {
+  animation-name: arrows42;
+  transform: rotate(45deg);
+  transform-origin: 16px 52px;
+}
+
+.pl__ring-rotate,
+.pl__ring-stroke {
+  transform-origin: 80px 80px;
+}
+
+.pl__ring-rotate {
+  animation-name: ringRotate42;
+}
+
+.pl__ring-stroke {
+  animation-name: ringStroke42;
+  transform: rotate(-45deg);
+}
+
+.pl__tick {
+  animation-name: tick42;
+}
+
+.pl__tick:nth-child(2) {
+  animation-delay: -1.75s;
+}
+
+.pl__tick:nth-child(3) {
+  animation-delay: -1.5s;
+}
+
+.pl__tick:nth-child(4) {
+  animation-delay: -1.25s;
+}
+
+.pl__tick:nth-child(5) {
+  animation-delay: -1s;
+}
+
+.pl__tick:nth-child(6) {
+  animation-delay: -0.75s;
+}
+
+.pl__tick:nth-child(7) {
+  animation-delay: -0.5s;
+}
+
+.pl__tick:nth-child(8) {
+  animation-delay: -0.25s;
+}
+
+/* Animations */
+@keyframes arrows42 {
+  from {
+    transform: rotate(45deg);
+  }
+
+  to {
+    transform: rotate(405deg);
+  }
+}
+
+@keyframes ringRotate42 {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(720deg);
+  }
+}
+
+@keyframes ringStroke42 {
+  from,
+  to {
+    stroke-dashoffset: 452;
+    transform: rotate(-45deg);
+  }
+
+  50% {
+    stroke-dashoffset: 169.5;
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes tick42 {
+  from,
+  3%,
+  47%,
+  to {
+    stroke-dashoffset: -12;
+  }
+
+  14%,
+  36% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* buy ticket button */
+.btn {
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+  line-height: 8px;
+  border-radius: 30px;
+  border: none;
+  background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btn > * {
+  display: inline-block;
+  transition: all ease-in-out 0.5s;
+}
+
+.btn__visible {
+  padding: 1.2rem 3rem;
+  text-align: center;
+}
+
+.btn__invisible {
+  width: 100%;
+  position: absolute;
+  padding: 1.2rem 0;
+  left: 0;
+  top: -100%;
+}
+
+.btn:hover {
+  background-image: linear-gradient(160deg, #f093fb 0%, #f5576c 100%);
+}
+
+.btn:hover .btn__visible {
+  transform: translateY(100%);
+}
+
+.btn:hover .btn__invisible {
+  top: 0;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+/* wishlist btn */
+/* From Uiverse.io by Df12345677 */
+.button {
+  height: 60px;
+  width: 200px;
+  background-color: #132233;
+  border: 2px solid rgb(182, 128, 128);
+  color: #eee;
+  transition: 0.6s;
+  font-size: 15px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 20px; */
+  overflow: hidden;
+}
+
+.button span {
+  transform: translateX(10px);
+  transition: 0.5s;
+}
+
+.button svg {
+  transform: translateX(-300px);
+  transition: 0.6s;
+  z-index: 3;
+  height: 20px;
+}
+
+.button:hover {
+  width: 60px;
+  background-color: rgba(51, 34, 51, 0.815);
+  box-shadow: 20px 20px 96px #bebebe, -20px -20px 96px #ffffff;
+}
+
+.button:hover svg {
+  transform: translateX(-5px);
+}
+
+.button:hover span {
+  transform: translateY(70px);
+  font-size: 0.1rem;
+}
+
+/* delete btn */
+
+/* From Uiverse.io by hamoode-taha-04 */
+.ui-btn {
+  cursor: pointer;
+  border-radius: 5px;
+  color: rgb(219, 218, 218);
+  border-style: solid;
+  background-color: transparent;
+  border-color: rgb(219, 218, 218);
+  width: 120px;
+  height: 40px;
+  transition: 0.2s ease;
+  text-transform: uppercase;
+  border-width: 2px;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+.ui-btn:hover {
+  color: rgb(247, 247, 247);
+  background-color: rgb(202, 25, 25);
+  border-color: rgb(202, 25, 25);
+  text-shadow: 0 0 50px white, 0 0 20px white, 0 0 15px white;
+  box-shadow: 0 0 50px rgb(202, 25, 25), 0 0 30px rgb(202, 25, 25),
+    0 0 60px rgb(202, 25, 25), 0 0 120px rgb(202, 25, 25);
+  font-size: 20px;
+  width: 130px;
+  height: 50px;
+  letter-spacing: 3px;
+}
+.ui-btn:active {
+  width: 115px;
+  height: 38px;
+  letter-spacing: 0px;
+}
+.btns {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: baseline;
+}
+
+/* button 1 */
+
+.ui-btn1 {
+  cursor: pointer;
+  border-radius: 5px;
+  color: rgb(219, 218, 218);
+  border-style: solid;
+  background-color: transparent;
+  border-color: rgb(219, 218, 218);
+  width: 120px;
+  height: 40px;
+  transition: 0.2s ease;
+  text-transform: uppercase;
+  border-width: 2px;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+.ui-btn1:hover {
+  color: rgb(247, 247, 247);
+  background-color: blue;
+  border-color: blue;
+  text-shadow: 0 0 50px white, 0 0 20px white, 0 0 15px white;
+  box-shadow: 0 0 50px blue, 0 0 30px blue, 0 0 60px blue, 0 0 120px blue;
+  font-size: 20px;
+  width: 130px;
+  height: 50px;
+  letter-spacing: 3px;
+}
+.ui-btn1:active {
+  width: 115px;
+  height: 38px;
+  letter-spacing: 0px;
+}
+.btns {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: baseline;
+}
+
+/* button 2 */
+
+.ui-btn2 {
+  cursor: pointer;
+  border-radius: 5px;
+  color: rgb(219, 218, 218);
+  border-style: solid;
+  background-color: transparent;
+  border-color: rgb(219, 218, 218);
+  width: 120px;
+  height: 40px;
+  transition: 0.2s ease;
+  text-transform: uppercase;
+  border-width: 2px;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+.ui-btn2:hover {
+  color: rgb(247, 247, 247);
+  background-color: rgb(221, 186, 31);
+  border-color: rgb(221, 186, 31);
+  text-shadow: 0 0 50px white, 0 0 20px white, 0 0 15px white;
+  box-shadow: 0 0 50px rgb(221, 186, 31), 0 0 30px rgb(221, 186, 31),
+    0 0 60px rgb(221, 186, 31), 0 0 120px rgb(221, 186, 31);
+  font-size: 20px;
+  width: 130px;
+  height: 50px;
+  letter-spacing: 3px;
+}
+.ui-btn2:active {
+  width: 115px;
+  height: 38px;
+  letter-spacing: 0px;
+}
+.btns {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: baseline;
+}

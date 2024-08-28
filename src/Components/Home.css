@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+body {
+  margin: 0;
+  height: 100vh;
+  background: url("https://www.example.com/your-background-image.jpg") no-repeat
+    center center fixed;
+  background-size: cover;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Container styling */
+.img1 {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Frosted glass effect */
+.img1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+  backdrop-filter: blur(10px) brightness(90%); /* Apply blur and brightness */
+  border-radius: 15px; /* Optional rounded corners */
+  z-index: 1; /* Ensure it overlays the image */
+}
+
+.img1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* Ensure the image is behind the frosted glass effect */
+}
